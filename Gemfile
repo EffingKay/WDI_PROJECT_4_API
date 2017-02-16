@@ -12,6 +12,7 @@ gem 'puma', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors'
 gem 'figaro'
+gem 'jwt'
 gem 'active_model_serializers'
 
 group :development, :test do
