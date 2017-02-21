@@ -17,6 +17,12 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    render json: {message: "room deleted"}
+  end
+
 
   private
     def room_params
