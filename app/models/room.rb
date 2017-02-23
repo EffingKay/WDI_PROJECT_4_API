@@ -7,8 +7,10 @@ class Room < ApplicationRecord
 
     def assign_black_card
       random_black_card = BLACK_CARDS.shuffle.first
-      self.black_card   = random_black_card[:text] if random_black_card[:pick]=1
-      self.pick         = random_black_card[:pick]
+      if random_black_card[:pick] = 1
+        self.black_card   = random_black_card[:text]
+        self.pick         = random_black_card[:pick]
+      end
     end
 
   BLACK_CARDS = [

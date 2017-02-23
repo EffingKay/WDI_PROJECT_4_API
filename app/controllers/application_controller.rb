@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  include ActionController::MimeResponds
+
   before_action :authenticate_user!
 
   def authenticate_user!

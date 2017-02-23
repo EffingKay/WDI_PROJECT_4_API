@@ -23,10 +23,19 @@ p "Adding a card................"
     @room.cards.create!(
       content: card.fetch('content'),
       color: card.fetch('color'),
-      user_id: card.fetch('user_id')
+      user_id: card.fetch('user_id'),
+      votes: card.fetch('votes')
     )
 
     ActionCable.server.broadcast stream_name, card
+  end
+
+  def vote_for_card data
+    card = data.fetch('message')
+p "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Someone voted for card"
+p "#{card} ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    @room.cards.update(card)
+
   end
 
   # Why doesn't this work?

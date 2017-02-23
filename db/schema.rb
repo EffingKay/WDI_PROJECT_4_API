@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20170220120026) do
   create_table "cards", force: :cascade do |t|
     t.text     "content"
     t.string   "color"
-    t.integer  "pick"
     t.integer  "user_id"
     t.integer  "room_id"
+    t.integer  "votes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

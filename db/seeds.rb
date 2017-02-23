@@ -8,6 +8,8 @@
 
 
 User.destroy_all
+Room.destroy_all
+Card.destroy_all
 
 User.create! ([
   {
@@ -27,5 +29,23 @@ User.create! ([
     email: 'morgan@morgan.com',
     password: "testing",
     password_confirmation: "testing"
+  },
+  {
+    username: "Kanye",
+    email: 'kanye@west.com',
+    password: "kim",
+    password_confirmation: "kim"
+  }
+  ])
+
+Room.create! ([
+  {
+    title: "Room one"
+  }, {
+    title: ":Insert Morgan joke here:"
+  }, {
+    title: "Flags for emojis make no sense"
+  }, {
+    title: "Whatever"
   }
   ])
