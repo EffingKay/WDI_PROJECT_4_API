@@ -34,7 +34,8 @@ p "Adding a card................"
     card = data.fetch('message')
     cardId = card.fetch('id')
     Card.where(id: cardId).update(card)
-    # @room.cards.update(card)
+
+    ActionCable.server.broadcast stream_name
   end
 
   # Why doesn't this work?
