@@ -32,10 +32,9 @@ p "Adding a card................"
 
   def vote_for_card data
     card = data.fetch('message')
-p "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Someone voted for card"
-p "#{card} ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
-    @room.cards.update(card)
-
+    cardId = card.fetch('id')
+    Card.where(id: cardId).update(card)
+    # @room.cards.update(card)
   end
 
   # Why doesn't this work?

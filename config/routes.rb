@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :cards, only: [:create, :index, :update, :destroy]
+  resources :cards, only: [:create, :index, :update, :destroy, :show]
   resources :rooms, only: [:index, :show, :create, :destroy]
   resources :users, only: [:index, :show]
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # get 'rooms/:id', to: 'rooms#show'
   # post 'rooms', to: 'rooms#create'
   # delete 'rooms/:id', to: 'rooms#destroy'
- 
+
   # get 'users', to: 'users#index'
   # get 'users/:id', to: 'users#show'
 
