@@ -16,7 +16,7 @@ User.create! ([
     username: "klaudia",
     email: 'kl@udia.com',
     password: "password",
-    password_confirmation: "password"
+    password_confirmation: "password",
   },
   {
     username: "alice",
