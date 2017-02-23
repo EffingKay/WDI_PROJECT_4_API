@@ -7,12 +7,10 @@ class RoomChannel < ApplicationCable::Channel
 
   # If no action string is given to ngActionCable then this is fired...
   def receive(data)
-p "Does this always get fired??"
+
   end
 
   def choose_card(data)
-p "Adding a card................"
-
     card = data.fetch('message')
     # Find current_user using token...
     # Could improve this somehow
@@ -34,8 +32,6 @@ p "Adding a card................"
     card = data.fetch('message')
     cardId = card.fetch('id')
     Card.where(id: cardId).update(card)
-
-    ActionCable.server.broadcast stream_name, @room.cards
   end
 
   # Why doesn't this work?
