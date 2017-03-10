@@ -76,6 +76,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  Rails.application.config.action_cable.allowed_request_origins = ['https://cards-against-humanity-api.herokuapp.com']
+  Rails.application.config.action_cable.allowed_request_origins = ['http://cards-a-h.herokuapp.com']
 
 end
